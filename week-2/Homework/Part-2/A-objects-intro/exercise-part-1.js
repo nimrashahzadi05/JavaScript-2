@@ -17,3 +17,15 @@ var car = {
 
 */
 
+const meal = {
+    fruits : ["apple","orange","banana"],
+    vegetable : "potato",
+    drink : "water",
+    dessert : "ice-cream",
+    main : "pizza"
+    
+}
+console.log(meal)
+
+
+

@@ -13,8 +13,18 @@
  *      .....
  * </div>
  */
+
 function exerciseOne(arrayOfPeople) {
   let content = document.querySelector("#content");
+
+arrayOfPeople.forEach(person => {
+  let h1 = document.createElement("h1");
+  content.appendChild(h1);
+  h1.innerText= person.name;
+  let h2 = document.createElement("h2");
+  content.appendChild(h2);
+  h2.innerText= person.job;
+})
 }
 
 /**
@@ -24,9 +34,19 @@ function exerciseOne(arrayOfPeople) {
  * All of your HTML should go inside the Div tag with the id "content".
  *
  */
-function exerciseTwo(shopping) {
-  //Write your code in here
-}
+ function exerciseTwo(shopping) {
+    let content = document.querySelector("#content")
+    let unorderedList = document.createElement("ul")
+    content.appendChild(unorderedList)
+    shopping.forEach((element) => {
+      let list = document.createElement("li")
+      list.textContent = "Shoppinglist"
+      unorderedList.appendChild(list)
+
+    })
+  
+    //Write your code in here
+  }
 
 /**
     I'd like to display my three favorite books inside a nice webpage!
@@ -58,6 +78,27 @@ function exerciseTwo(shopping) {
     The end result should look something like this: https://hyf-js2-week1-makeme-ex1-demo.herokuapp.com/
 **/
 function exerciseThree(books) {
+    const list = document.createElement("ul")
+    let content = document.querySelector("#content");
+    content.appendChild(list)
+  
+    books.forEach((book) =>{
+    const listItem = document.createElement("li")
+      const paragraph = document.createElement("p")
+      const image = document.createElement("img")
+      image.src = book.url
+      paragraph.textContent = book.title + " - " + book.author;
+  if(book.alreadyRead){
+    listItem.classList.add("alreadyRead")
+  }else{
+    listItem.classList.add("IHaventReadThisBook")
+  }
+  
+  
+      listItem.appendChild(paragraph)
+      list.appendChild(listItem)
+      listItem.appendChild(image)
+    })
   //Write your code in here
 }
 

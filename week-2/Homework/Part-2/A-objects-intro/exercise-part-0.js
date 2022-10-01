@@ -9,5 +9,8 @@ Try to think of as many properties as you can!
 let laptop = {
     brand: "Lenovo",
     screenSize: 13,
-    isTouchscreen: true,
+    isTouchscreen: false,
+    soundQuality : "good",
+    cameraWorking : false,
+    batteryTime : "7hours"
   };

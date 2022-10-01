@@ -8,6 +8,19 @@ const studentGrades = {
     abdul: 19,
   };
   
+
   // Prints
   // TOM - 20
   // ABDUL - 19
+
+  // function Grades(students){
+  //   if (
+  //     studentGrades.grades < 18 
+  //   )
+  //   {
+  //     return studentGrades
+  //   }
+   
+  // }
+  // let grades = this.filter
+  // console.log(studentGrades)
