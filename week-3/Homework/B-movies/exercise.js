@@ -8,6 +8,8 @@ Create a function called "showMovies" that
 - for each movie, it creates a <p> element with the movie title and director and append it to the #all-movies div.
 - it sets the innerText of the #movies-number element to the total number of the movies in the array "movies"
 
+
+
 Task 2
 Amend your function above to only show movies after 1 second. Remember to use setTimeout to achieve that
 Create a new function called "addMovie"
@@ -31,6 +33,7 @@ TIP: Use the functions you created on tasks 1-3
 
 ================
 */
+ 
 var movies = [
   {
     title: "Color Out of Space",
@@ -60,8 +63,97 @@ var movies = [
 
 // create showMovies function
 
+function showMovies(e) {
+  
+  e.forEach(function(e){
+   let p =  document.createElement("p")
+   p.textContent = e.title + " : "+e.director;
+   let allMovies = document.getElementById("all-movies")
+   allMovies.appendChild(p)
+  })
+
+let number = document.getElementById("movies-number");
+number.textContent = movies.length;
+}
+setTimeout(showMovies, 1000);
+
 
 // create a new movie object for your favorite movie
 
+newMovie = {
+  name :"myMovie",
+  director : "thomas",
+  movieType : "horror",
+  haveWatched : true
+}
 
 // create addMovies function
+
+// function addMovie(e){
+//  movies.push(e)
+//  }
+//   setTimeout(function () {
+//     addMovie(newMovie);
+//   }, 2000);
+//    setTimeout(function () {
+//     showMovies(movies);
+//   }, 4000);
+
+// setTimeout("addMovie", 2000)
+
+
+
+// create showMovies function
+
+function showMovies(x) {
+  x.forEach(function (x) {
+     var paragraph = document.createElement("p");
+     paragraph.innerText = x.title + " :  " + x.director;
+     var movieDiv = document.getElementById("all-movies");
+     movieDiv.appendChild(paragraph);
+   });
+   var movieNumber = document.getElementById("movies-number");
+   movieNumber.innerText = movies.length;
+ }
+
+
+setTimeout(showMovies, 1000);
+
+
+// create a new movie object for your favorite movie
+
+newMovie = {
+  title :"Albatros",
+  director: "Woody Allen",
+  type: "horror",
+  haveWatched: "true"
+}
+ function addMovie(x){
+ movies.push(x)
+ }
+  setTimeout(function () {
+    addMovie(newMovie);
+  }, 2000);
+   setTimeout(function () {
+    showMovies(movies);
+  }, 4000);
+
+setTimeout("addMovie", 2000)
+
+
+ let movieAdd = {};
+ let newMovieArray = [];
+ let saveButton = document.querySelector("button");
+ saveButton.addEventListener("click", addData);
+ function addData() {
+   movieAdd.title = document.getElementById("title").value;
+   movieAdd.director = document.getElementById("director").value;
+   movieAdd.type = document.getElementById("type").value;
+   movieAdd.haveWatched = document.getElementById("haveWatched").value;
+   newMovieArray[0] = movieAdd;
+
+   showMovies(newMovieArray);
+   var movieNumber = document.getElementById("movies-number");
+   let number = parseInt(movieNumber.innerText);
+   movieNumber.innerText = number + 1;
+ }
