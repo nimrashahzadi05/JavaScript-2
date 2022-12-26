@@ -76,12 +76,14 @@ largerLinksAdd.addEventListener("click", largeLinks);
 
 function largeLinks() {
   const linksToChange = document.querySelectorAll("a");
-  for (let i = 0; i < linksToChange.length; i++) {
-   // linksToChange[i].className = "biggerLinks";
+  console.log(linksToChange)
 
-   linksToChange[i].style.fontSize= "x-Large"
-  }
-}
+  for (i = 0; i < linksToChange.length ;i++ ){
+ linksToChange[i].style.fontSize= "x-Large"
+  
+  }}
+  
+
 
 /*
 Task 6
@@ -91,6 +93,7 @@ Using the same function in Task 4,
 When the 'Add' button is clicked, get the text inside the input field and create a new paragraph in the "LEARN MORE" section
 Also clear the text inside the input field
 */
+
 const newTextadd = document.querySelector("#addArticleBtn");
 newText.addEventListener("click", newtextadd);
 function newtextadd() {
@@ -108,7 +111,6 @@ Create an array of 5 different colors.
 Using the same function in Task 3, every time the 'Change colour' button is clicked, the background color will be changed with the next color in the array.
 The next color when you are in the last color of the array will be the first color again.
 */
-
 var i=0;
 var changeBackColor = document.querySelector("#bgrChangeBtn");
 changeColor.addEventListener("click", changeBackColor);
